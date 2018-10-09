@@ -42,9 +42,9 @@ public class numZerosAndOnes {
             
             for (int j = 0; j < m+1; j++) {
                 for (int k = 0; k < n+1; k++) {
-                    if (j >= numZero && k >= numOne) {
+                    if (j >= numZero && k >= numOne) { // If there are enough resources (0 and 1's) left, decide if i should be included or not 
                         numFit[i][j][k] = Math.max(numFit[i-1][j-numZero][k-numOne]+1, numFit[i-1][j][k]);
-                    } else {
+                    } else { // Not enough resources left to pick i, so we do not include i in the solution.
                         numFit[i][j][k] = numFit[i-1][j][k];
                     }
                 }
